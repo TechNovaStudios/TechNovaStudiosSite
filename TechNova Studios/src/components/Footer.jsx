@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter, Mail } from "lucide-react"
+import { resources } from "../resources"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -41,10 +42,10 @@ export default function Footer() {
             className="md:col-span-1"
           >
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg">T</span>
+              <div className="w-10 h-10  rounded-xl flex items-center justify-center">
+                <img src={resources.logo} alt="" />
               </div>
-              <span className="text-white font-bold text-xl">TechNova</span>
+              <span className="text-white font-bold text-xl">TechNova Studios</span>
             </div>
             <p className="text-gray-300 text-base leading-relaxed">
               Building future-ready digital experiences with cutting-edge technology and exceptional attention to

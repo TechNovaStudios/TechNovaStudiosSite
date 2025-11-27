@@ -63,17 +63,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-bold rounded-2xl hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300"
-            >
-              Get Started
-            </motion.button>
-          </div>
-
           {/* Mobile Menu Button */}
           <motion.button
             whileTap={{ scale: 0.95 }}
@@ -106,13 +95,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-bold rounded-2xl mt-4 hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300"
-            >
-              Get Started
-            </motion.button>
           </div>
         </motion.div>
       </div>
