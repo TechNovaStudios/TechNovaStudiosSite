@@ -1,7 +1,16 @@
-"use client"
-import { useNavigate } from "react-router-dom"
-import { motion } from "framer-motion"
-import { Code, Users, Target, Heart, Github, Linkedin, Mail, ExternalLink } from "lucide-react"
+"use client";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+  Code,
+  Users,
+  Target,
+  Heart,
+  Github,
+  Linkedin,
+  Mail,
+  ExternalLink,
+} from "lucide-react";
 
 export default function About() {
   const navigate = useNavigate();
@@ -9,121 +18,135 @@ export default function About() {
   const teamMembers = [
     {
       name: "Dhruv Shere",
-      role: "Lead Full-Stack Developer & System Architect",
-      description: "Specialized in React, Node.js, and cloud-native architecture. Passionate about building scalable, high-performance applications with clean code and robust system design.",
-      skills: ["React/Next.js", "Node.js", "System Architecture", "Cloud Native", "Microservices", "DevOps"],
+      role: "Team Lead • Full-Stack Developer • Product Ideation & System Architect",
+      description:
+        "Founder & lead developer of TechNova Studios. Skilled in React, Node, and system architecture with a strong focus on clean, scalable engineering. Drives the vision, ideas, and feature innovation across all projects. Known for exploring new technologies, creating complete products independently, and guiding the team in technical decisions.",
+      skills: [
+        "React/Next.js",
+        "Node.js",
+        "System Architecture",
+        "MongoDB",
+        "Product Ideation",
+        "Project Leadership",
+      ],
       gradient: "from-cyan-500 to-blue-500",
       socialLinks: [
-        { 
-          icon: Github, 
-          href: "https://github.com/DHRUV-SHERE", 
-          label: "GitHub" 
+        {
+          icon: Github,
+          href: "https://github.com/DHRUV-SHERE",
+          label: "GitHub",
         },
-        { 
-          icon: Linkedin, 
-          href: "https://www.linkedin.com/in/dhruv-shere/", 
-          label: "LinkedIn" 
+        {
+          icon: Linkedin,
+          href: "https://www.linkedin.com/in/dhruv-shere/",
+          label: "LinkedIn",
         },
-        { 
-          icon: Mail, 
-          href: "mailto:sheredhruv@gmail.com", 
-          label: "Email" 
+        { icon: Mail, href: "mailto:sheredhruv@gmail.com", label: "Email" },
+        {
+          icon: ExternalLink,
+          href: "https://portfolio-dhruvshere.vercel.app",
+          label: "Portfolio",
         },
-        { 
-          icon: ExternalLink, 
-          href: "https://portfolio-dhruvshere.vercel.app", 
-          label: "Portfolio" 
-        }
-      ]
+      ],
     },
+
     {
       name: "Jeet Jani",
-      role: "Lead UI/UX Designer, Data Analytics & Backend Developer",
-      description: "Expert in creating intuitive user experiences and pixel-perfect interfaces. Combines design thinking with technical expertise to deliver visually stunning and highly functional applications.",
-      skills: ["UI/UX Design", "Figma", "React", "TypeScript", "Motion Design", "Responsive Design"],
+      role: "UI/UX Designer • Frontend Developer • Backend (PHP & Node) • Data Analytics Learner",
+      description:
+        "Jeet brings creative UI/UX thinking and practical frontend development experience. Skilled in PHP backend, React interfaces, and modern design tools. Currently expanding expertise into data analytics. Has worked on full-stack features in Node + React with collaborative support from the team. Focused on delivering visually polished and user-friendly experiences.",
+      skills: [
+        "UI/UX Design",
+        "Figma",
+        "Frontend Development",
+        "PHP Backend",
+        "Node.js (Beginner)",
+        "Data Analytics (Learning)",
+      ],
       gradient: "from-purple-500 to-pink-500",
       socialLinks: [
-        { 
-          icon: Github, 
-          href: "https://github.com/janijeet17", 
-          label: "GitHub" 
+        {
+          icon: Github,
+          href: "https://github.com/janijeet17",
+          label: "GitHub",
         },
-        { 
-          icon: Linkedin, 
-          href: "https://www.linkedin.com/in/jani-jeet/", 
-          label: "LinkedIn" 
+        {
+          icon: Linkedin,
+          href: "https://www.linkedin.com/in/jani-jeet/",
+          label: "LinkedIn",
         },
-        { 
-          icon: Mail, 
-          href: "mailto:janijeet50@gmail.com", 
-          label: "Email" 
+        { icon: Mail, href: "mailto:janijeet50@gmail.com", label: "Email" },
+        {
+          icon: ExternalLink,
+          href: "https://jeet-portfolio-e5i3.vercel.app/",
+          label: "Portfolio",
         },
-        { 
-          icon: ExternalLink, 
-          href: "https://jeet-portfolio-e5i3.vercel.app/", 
-          label: "Portfolio" 
-        }
-      ]
+      ],
     },
+
     {
       name: "Herin Patel",
-      role: "Lead Database Engineer & Backend Developer",
-      description: "Database architect and backend specialist focused on building robust, scalable data solutions. Expert in optimizing performance and ensuring data integrity across complex systems.",
-      skills: ["Database Design", "SQL/NoSQL", "API Development", "Cloud Services", "Performance Tuning", "Security"],
+      role: "Backend Developer • Database Engineer • Java Developer",
+      description:
+        "Herin specializes in backend logic, database systems, and structured coding. Experienced in Node.js, SQL/NoSQL, and Java backend development. A reliable executor who follows instructions accurately and ensures stable backend performance. Focused on data integrity, system performance, and secure API development.",
+      skills: [
+        "Node.js",
+        "SQL/NoSQL Databases",
+        "Java Backend",
+        "System Performance",
+        "Security",
+        "Cloud Services",
+      ],
       gradient: "from-orange-500 to-red-500",
       socialLinks: [
-        { 
-          icon: Github, 
-          href: "https://github.com/Herin27", 
-          label: "GitHub" 
+        { icon: Github, href: "https://github.com/Herin27", label: "GitHub" },
+        {
+          icon: Linkedin,
+          href: "https://www.linkedin.com/in/herin-patel-dev/",
+          label: "LinkedIn",
         },
-        { 
-          icon: Linkedin, 
-          href: "https://www.linkedin.com/in/herin-patel-dev/", 
-          label: "LinkedIn" 
+        { icon: Mail, href: "mailto:herin7151@gmail.com", label: "Email" },
+        {
+          icon: ExternalLink,
+          href: "https://herinpatel-dev.vercel.app",
+          label: "Portfolio",
         },
-        { 
-          icon: Mail, 
-          href: "mailto:herin7151@gmail.com", 
-          label: "Email" 
-        },
-        { 
-          icon: ExternalLink, 
-          href: "https://herinpatel-dev.vercel.app", 
-          label: "Portfolio" 
-        }
-      ]
-    }
-  ]
+      ],
+    },
+  ];
 
   const stats = [
     { icon: Code, label: "Projects Completed", value: "10+" },
     { icon: Target, label: "Success Rate", value: "99%" },
-    { icon: Heart, label: "Years Experience", value: "5+" }
-  ]
+    { icon: Heart, label: "Years Experience", value: "5+" },
+  ];
 
   const values = [
     {
       icon: Code,
       title: "Technical Excellence",
-      description: "We stay updated with the latest technologies and best practices to deliver cutting-edge solutions."
+      description:
+        "We stay updated with the latest technologies and best practices to deliver cutting-edge solutions.",
     },
     {
       icon: Heart,
       title: "Passion for Quality",
-      description: "Every line of code is written with attention to detail and commitment to excellence."
+      description:
+        "Every line of code is written with attention to detail and commitment to excellence.",
     },
     {
       icon: Users,
       title: "Client Collaboration",
-      description: "We work closely with our clients to ensure their vision is perfectly translated into reality."
+      description:
+        "We work closely with our clients to ensure their vision is perfectly translated into reality.",
     },
     {
       icon: Target,
       title: "Results-Driven",
-      description: "We focus on delivering solutions that drive real business results and user satisfaction."
-    }
-  ]
+      description:
+        "We focus on delivering solutions that drive real business results and user satisfaction.",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-slate-950 py-12 md:py-20 lg:py-24">
@@ -142,7 +165,9 @@ export default function About() {
             className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-full mb-6"
           >
             <Users className="w-4 h-4 text-cyan-400" />
-            <span className="text-cyan-400 text-sm font-medium">About TechNova</span>
+            <span className="text-cyan-400 text-sm font-medium">
+              About TechNova
+            </span>
           </motion.div>
 
           <motion.h1
@@ -160,15 +185,17 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-gray-300 text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed"
           >
-            We are a passionate team of full-stack developers dedicated to creating exceptional digital experiences. 
-            With expertise in modern technologies and a commitment to quality, we bring your ideas to life.
+            We are a passionate team of full-stack developers dedicated to
+            creating exceptional digital experiences. With expertise in modern
+            technologies and a commitment to quality, we bring your ideas to
+            life.
           </motion.p>
         </motion.div>
 
         {/* Stats Section */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {stats.map((stat, index) => {
-            const IconComponent = stat.icon
+            const IconComponent = stat.icon;
             return (
               <motion.div
                 key={index}
@@ -181,10 +208,12 @@ export default function About() {
                 <div className="w-12 h-12 bg-cyan-400/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <IconComponent className="w-6 h-6 text-cyan-400" />
                 </div>
-                <p className="text-cyan-400 text-2xl md:text-3xl font-bold mb-2">{stat.value}</p>
+                <p className="text-cyan-400 text-2xl md:text-3xl font-bold mb-2">
+                  {stat.value}
+                </p>
                 <p className="text-gray-300 text-base">{stat.label}</p>
               </motion.div>
-            )
+            );
           })}
         </div>
 
@@ -201,7 +230,8 @@ export default function About() {
               Meet Our <span className="text-cyan-400">Team</span>
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              Passionate developers working together to deliver exceptional results
+              Passionate developers working together to deliver exceptional
+              results
             </p>
           </div>
 
@@ -218,9 +248,14 @@ export default function About() {
               >
                 <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 backdrop-blur-sm rounded-2xl p-6 h-full transition-all duration-300 hover:border-cyan-400/30 hover:shadow-xl hover:shadow-cyan-500/10">
                   {/* Member avatar */}
-                  <div className={`w-20 h-20 bg-gradient-to-br ${member.gradient} rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`w-20 h-20 bg-gradient-to-br ${member.gradient} rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300`}
+                  >
                     <span className="text-white text-xl font-bold">
-                      {member.name.split(' ').map(n => n[0]).join('')}
+                      {member.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
                     </span>
                   </div>
 
@@ -251,7 +286,7 @@ export default function About() {
                     {/* Social Links */}
                     <div className="flex justify-center gap-3">
                       {member.socialLinks.map((social, socialIndex) => {
-                        const IconComponent = social.icon
+                        const IconComponent = social.icon;
                         return (
                           <motion.a
                             key={socialIndex}
@@ -265,7 +300,7 @@ export default function About() {
                           >
                             <IconComponent size={18} />
                           </motion.a>
-                        )
+                        );
                       })}
                     </div>
                   </div>
@@ -294,7 +329,7 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {values.map((value, index) => {
-              const IconComponent = value.icon
+              const IconComponent = value.icon;
               return (
                 <motion.div
                   key={index}
@@ -321,7 +356,7 @@ export default function About() {
                     </div>
                   </div>
                 </motion.div>
-              )
+              );
             })}
           </div>
         </motion.div>
@@ -338,9 +373,10 @@ export default function About() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Work With Us?
             </h2>
-            
+
             <p className="text-gray-300 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Let's discuss your project and how our team can help bring your vision to life with technical excellence.
+              Let's discuss your project and how our team can help bring your
+              vision to life with technical excellence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -352,11 +388,11 @@ export default function About() {
               >
                 Start Your Project
               </motion.button>
-              
+
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={()=> navigate("/projects")}
+                onClick={() => navigate("/projects")}
                 className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-2xl hover:bg-cyan-400/10 transition-all duration-300 text-base"
               >
                 View Our Work
@@ -366,5 +402,5 @@ export default function About() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
