@@ -1,23 +1,81 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Github, Linkedin, Twitter, Mail } from "lucide-react"
-import { resources } from "../resources"
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { resources } from "../resources";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const navigate = useNavigate();
+  const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/TechNovaStudios", label: "GitHub" },
+    {
+      icon: Github,
+      href: "https://github.com/TechNovaStudios",
+      label: "GitHub",
+    },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Mail, href: "mailto:info.hexcodebreaker@gmail.com", label: "Email" },
-  ]
+    {
+      icon: Mail,
+      href: "mailto:info.hexcodebreaker@gmail.com",
+      label: "Email",
+    },
+  ];
+
+  const handleNavigation = (link) => {
+    switch (link) {
+      // Company Links
+      case "About":
+        navigate("/about");
+        break;
+      case "Services":
+        navigate("/services");
+        break;
+      case "Careers":
+        navigate("/contact");
+        break;
+      case "Contact":
+        navigate("/contact");
+        break;
+
+      // Resource Links
+      case "Blog":
+        navigate("/blog");
+        break;
+      case "Documentation":
+        navigate("/documentation");
+        break;
+      case "Help Center":
+        navigate("/help");
+        break;
+      case "FAQ":
+        navigate("/faq");
+        break;
+
+      // Legal Links
+      case "Privacy":
+        navigate("/privacy");
+        break;
+      case "Terms":
+        navigate("/terms");
+        break;
+      case "Security":
+        navigate("/security");
+        break;
+      case "Compliance":
+        navigate("/compliance");
+        break;
+      default:
+        break;
+    }
+  };
 
   const footerLinks = [
     {
       title: "Company",
-      links: ["About", "Services", "Careers", "Contact"],
+      links: ["About", "Services", "Projects", "Contact"],
     },
     {
       title: "Resources",
@@ -27,7 +85,7 @@ export default function Footer() {
       title: "Legal",
       links: ["Privacy", "Terms", "Security", "Compliance"],
     },
-  ]
+  ];
 
   return (
     <footer className="bg-slate-950 border-t border-slate-800">
@@ -42,14 +100,16 @@ export default function Footer() {
             className="md:col-span-1"
           >
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10  rounded-xl flex items-center justify-center">
-                <img src={resources.logo} alt="" />
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center">
+                <img src={resources.logo} alt="TechNova Studios Logo" />
               </div>
-              <span className="text-white font-bold text-xl">TechNova Studios</span>
+              <span className="text-white font-bold text-xl">
+                TechNova Studios
+              </span>
             </div>
             <p className="text-gray-300 text-base leading-relaxed">
-              Building future-ready digital experiences with cutting-edge technology and exceptional attention to
-              detail.
+              Building future-ready digital experiences with cutting-edge
+              technology and exceptional attention to detail.
             </p>
           </motion.div>
 
@@ -62,13 +122,18 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
             >
-              <h3 className="text-white font-semibold text-lg mb-4">{column.title}</h3>
+              <h3 className="text-white font-semibold text-lg mb-4">
+                {column.title}
+              </h3>
               <ul className="space-y-3">
                 {column.links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-gray-300 text-base hover:text-cyan-400 transition-colors duration-300">
+                    <button
+                      onClick={() => handleNavigation(link)}
+                      className="text-gray-300 text-base hover:text-cyan-400 transition-colors duration-300 cursor-pointer hover:underline"
+                    >
                       {link}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -99,11 +164,13 @@ export default function Footer() {
             className="flex gap-4"
           >
             {socialLinks.map((social) => {
-              const Icon = social.icon
+              const Icon = social.icon;
               return (
                 <motion.a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, color: "#22d3ee" }}
                   whileTap={{ scale: 0.95 }}
                   className="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 flex items-center justify-center text-gray-300 hover:border-cyan-400/30 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300"
@@ -111,11 +178,11 @@ export default function Footer() {
                 >
                   <Icon size={20} />
                 </motion.a>
-              )
+              );
             })}
           </motion.div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin, Send, User, MessageCircle } from "lucide-react"
 import emailjs from 'emailjs-com'
+import toast, { Toaster } from 'react-hot-toast'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,7 +15,6 @@ export default function Contact() {
     message: ""
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState("")
 
   const purposeOptions = [
     "Website Development",
@@ -36,12 +36,11 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    setSubmitStatus("")
 
     try {
       await emailjs.send(
-        'service_3f1e3mb', // Replace with your EmailJS service ID
-        'template_pz8bhgu', // Replace with your EmailJS template ID
+        'service_3f1e3mb',
+        'template_pz8bhgu',
         {
           name: formData.name,
           email: formData.email,
@@ -57,10 +56,65 @@ export default function Contact() {
             minute: '2-digit'
           })
         },
-        'fSVYEXsf1FJ0XkAYN' // Replace with your EmailJS public key
+        'fSVYEXsf1FJ0XkAYN'
       )
 
-      setSubmitStatus("success")
+      // Show custom success toast
+      toast.custom((t) => (
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 100 }}
+          className={`${
+            t.visible ? 'animate-enter' : 'animate-leave'
+          } max-w-md w-full bg-slate-800 border border-cyan-400/30 shadow-lg rounded-2xl pointer-events-auto flex flex-col overflow-hidden`}
+        >
+          <div className="flex-1 p-4">
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <div className="ml-3 flex-1">
+                <p className="text-sm font-medium text-white">
+                  Message Sent Successfully!
+                </p>
+                <p className="mt-1 text-sm text-gray-300">
+                  Thank you for contacting us. We'll get back to you within 24 hours.
+                </p>
+              </div>
+              <div className="ml-4 flex-shrink-0 flex">
+                <button
+                  onClick={() => toast.dismiss(t.id)}
+                  className="bg-slate-700 rounded-full inline-flex text-gray-400 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                >
+                  <span className="sr-only">Close</span>
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          {/* Progress Bar */}
+          <div className="w-full bg-slate-700 h-1">
+            <motion.div
+              initial={{ width: "100%" }}
+              animate={{ width: "0%" }}
+              transition={{ duration: 5, ease: "linear" }}
+              className="h-full bg-gradient-to-r from-cyan-400 to-blue-500"
+              onAnimationComplete={() => toast.dismiss(t.id)}
+            />
+          </div>
+        </motion.div>
+      ), {
+        duration: 5000,
+        position: 'bottom-right',
+      })
+
       setFormData({
         name: "",
         email: "",
@@ -70,7 +124,62 @@ export default function Contact() {
       })
     } catch (error) {
       console.error('EmailJS error:', error)
-      setSubmitStatus("error")
+      
+      // Show error toast
+      toast.custom((t) => (
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 100 }}
+          className={`${
+            t.visible ? 'animate-enter' : 'animate-leave'
+          } max-w-md w-full bg-slate-800 border border-red-400/30 shadow-lg rounded-2xl pointer-events-auto flex flex-col overflow-hidden`}
+        >
+          <div className="flex-1 p-4">
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                <div className="w-8 h-8 bg-red-500/20 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <div className="ml-3 flex-1">
+                <p className="text-sm font-medium text-white">
+                  Failed to Send Message
+                </p>
+                <p className="mt-1 text-sm text-gray-300">
+                  Sorry, there was an error. Please try again or contact us directly.
+                </p>
+              </div>
+              <div className="ml-4 flex-shrink-0 flex">
+                <button
+                  onClick={() => toast.dismiss(t.id)}
+                  className="bg-slate-700 rounded-full inline-flex text-gray-400 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-red-400"
+                >
+                  <span className="sr-only">Close</span>
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          {/* Progress Bar */}
+          <div className="w-full bg-slate-700 h-1">
+            <motion.div
+              initial={{ width: "100%" }}
+              animate={{ width: "0%" }}
+              transition={{ duration: 5, ease: "linear" }}
+              className="h-full bg-gradient-to-r from-red-400 to-red-500"
+              onAnimationComplete={() => toast.dismiss(t.id)}
+            />
+          </div>
+        </motion.div>
+      ), {
+        duration: 5000,
+        position: 'top-right',
+      })
     } finally {
       setIsSubmitting(false)
     }
@@ -78,6 +187,18 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-slate-950 py-12 md:py-20 lg:py-24">
+      {/* React Hot Toaster */}
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          duration: 5000,
+        }}
+      />
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <motion.div
@@ -288,26 +409,6 @@ export default function Contact() {
                   </>
                 )}
               </motion.button>
-
-              {submitStatus === "success" && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mt-4 p-3 bg-green-500/20 border border-green-500/30 rounded-xl text-green-400 text-center"
-                >
-                  Thank you! Your message has been sent successfully.
-                </motion.div>
-              )}
-
-              {submitStatus === "error" && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mt-4 p-3 bg-red-500/20 border border-red-500/30 rounded-xl text-red-400 text-center"
-                >
-                  Sorry, there was an error sending your message. Please try again.
-                </motion.div>
-              )}
             </form>
           </motion.div>
         </div>
