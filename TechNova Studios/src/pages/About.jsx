@@ -38,7 +38,7 @@ export default function About() {
     },
     {
       name: "Jeet Jani",
-      role: "Lead UI/UX Designer & Frontend Developer",
+      role: "Lead UI/UX Designer, Data Analytics & Backend Developer",
       description: "Expert in creating intuitive user experiences and pixel-perfect interfaces. Combines design thinking with technical expertise to deliver visually stunning and highly functional applications.",
       skills: ["UI/UX Design", "Figma", "React", "TypeScript", "Motion Design", "Responsive Design"],
       gradient: "from-purple-500 to-pink-500",
@@ -60,7 +60,7 @@ export default function About() {
         },
         { 
           icon: ExternalLink, 
-          href: "https://jeetjani-portfolio.vercel.app", 
+          href: "https://jeet-portfolio-e5i3.vercel.app/", 
           label: "Portfolio" 
         }
       ]
