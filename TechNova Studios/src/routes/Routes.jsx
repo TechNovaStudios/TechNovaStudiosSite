@@ -7,6 +7,9 @@ import Workflow from "../pages/Workflow";
 import Contact from "../pages/Contact";
 import Layout from "../layout/Layout";
 
+// 404 Error
+import NotFound from "../pages/NotFound";
+
 // Resource Pages
 import Blog from "../pages/ResourceSection/Blog";
 import Documentation from "../pages/ResourceSection/Documentation";
@@ -104,6 +107,12 @@ export default function AppRoutes() {
                 <Route path="/compliance" element={
                     <PageTransitionLoader>
                         <Compliance />
+                    </PageTransitionLoader>
+                } />
+                {/* 404 Not Found Route */}
+                <Route path="*" element={
+                    <PageTransitionLoader>
+                        <NotFound />
                     </PageTransitionLoader>
                 } />
             </Route>
