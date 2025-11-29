@@ -193,7 +193,7 @@ const projects = [
               className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-full"
             >
               <Sparkles className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm text-cyan-400">TechNova Studios</span>
+              <span className="text-xl text-cyan-400">TechNova Studios</span>
             </motion.div>
 
             <motion.h1
@@ -284,7 +284,7 @@ const projects = [
           <p className="font-semibold text-white mb-1">
             {stat.label}
           </p>
-          <p className="text-xs text-gray-300">
+          <p className="text-sm text-gray-300">
             {stat.description}
           </p>
         </motion.div>
@@ -334,7 +334,7 @@ const projects = [
                   <h3 className="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors text-white">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-gray-300 text-xl">
                     {benefit.description}
                   </p>
                 </motion.div>
@@ -390,14 +390,14 @@ const projects = [
                     <h3 className="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors text-white">
                       {project.title}
                     </h3>
-                    <p className="text-gray-300 text-sm mb-4">
+                    <p className="text-gray-300 text-xl mb-4">
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-3 py-1 text-xs rounded-full bg-cyan-400/10 text-cyan-400 border border-cyan-400/20"
+                          className="px-3 py-1 text-sm rounded-full bg-cyan-400/10 text-cyan-400 border border-cyan-400/20"
                         >
                           {tag}
                         </span>
@@ -468,7 +468,7 @@ const projects = [
               </Link>
               
               <motion.a 
-                href="https://wa.me/1234567890" 
+                href="https://wa.me/9316846548" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 whileHover={{ 
@@ -483,7 +483,7 @@ const projects = [
               </motion.a>
             </div>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-gray-300">
+            <div className="mt-8 flex flex-wrap justify-center gap-6 text-xl text-gray-300">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-cyan-400" />
                 <span>Fast Response</span>
