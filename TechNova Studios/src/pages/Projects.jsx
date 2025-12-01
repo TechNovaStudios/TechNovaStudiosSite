@@ -85,13 +85,13 @@ const ProjectsPage = () => {
   const getStatusColor = (status) => {
     switch (status) {
       case 'completed':
-        return 'bg-green-500/20 text-green-400 border-green-500/30';
+        return 'bg-green-600 text-white border-green-500/30';
       case 'in-progress':
-        return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30';
+        return 'bg-red-500 text-white border-yellow-500/30';
       case 'planned':
-        return 'bg-blue-500/20 text-blue-400 border-blue-500/30';
-      default:
-        return 'bg-gray-500/20 text-gray-400 border-gray-500/30';
+        return 'bg-blue-600 text-white border-blue-500/30';
+      default:  
+        return 'bg-gray-500 text-white border-gray-500/30';
     }
   };
 
