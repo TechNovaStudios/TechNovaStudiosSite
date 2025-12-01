@@ -27,7 +27,7 @@ export default function Services() {
     },
     {
       icon: Layout,
-      title: "React Dashboards",
+      title: "Dashboards",
       description: "Interactive and responsive admin dashboards and data visualization"
     },
     {
