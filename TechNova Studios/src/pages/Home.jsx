@@ -1,30 +1,30 @@
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
-import { 
-  ArrowRight, 
-  Sparkles, 
-  Users, 
-  Code, 
-  CheckCircle, 
+import {
+  ArrowRight,
+  Sparkles,
+  Users,
+  Code,
+  CheckCircle,
   Award,
-  Zap, 
-  Shield, 
-  Clock, 
-  TrendingUp, 
-  Heart, 
+  Zap,
+  Shield,
+  Clock,
+  TrendingUp,
+  Heart,
   Headphones,
-  Star, 
+  Star,
   Quote,
-  MessageCircle
+  MessageCircle,
 } from "lucide-react";
 
 const Home = () => {
   const navigate = useNavigate();
-  
+
   // Calculate dynamic height based on navbar
   const calculateHeroHeight = () => {
-    if (typeof window === 'undefined') return '100vh';
-    
+    if (typeof window === "undefined") return "100vh";
+
     // You can adjust this value based on your actual navbar height
     const navbarHeight = 80; // Approximate navbar height in pixels
     return `calc(100vh - ${navbarHeight}px)`;
@@ -91,24 +91,27 @@ const Home = () => {
     {
       title: "PashuMitra",
       description: "Animal welfare management platform",
-      image: "https://images.unsplash.com/photo-1516728778615-2d590ea1855e?w=800&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1516728778615-2d590ea1855e?w=800&auto=format&fit=crop",
       tags: ["React", "Node.js", "MongoDB"],
-      status: "completed"
+      status: "completed",
     },
     {
       title: "AgroSense",
       description: "Agricultural IoT for smart farming",
-      image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&auto=format&fit=crop",
       tags: ["React", "Python", "PostgreSQL"],
-      status: "completed"
+      status: "completed",
     },
     {
       title: "Portfolio Sites",
       description: "Professional portfolio websites",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&auto=format&fit=crop",
       tags: ["React", "Tailwind", "Framer"],
-      status: "completed"
-    }
+      status: "completed",
+    },
   ];
 
   const containerVariants = {
@@ -116,44 +119,44 @@ const Home = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 30,
-      scale: 0.95
+      scale: 0.95,
     },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
+    visible: {
+      opacity: 1,
+      y: 0,
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const cardHoverVariants = {
     initial: { scale: 1, y: 0 },
-    hover: { 
-      scale: 1.02, 
+    hover: {
+      scale: 1.02,
       y: -5,
       transition: {
         duration: 0.3,
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
   return (
     <div className="min-h-screen bg-slate-950 overflow-x-hidden">
       {/* Hero Section */}
-      <section 
+      <section
         className="relative flex items-center justify-center overflow-hidden bg-slate-950"
         style={{ minHeight: calculateHeroHeight() }}
       >
@@ -168,10 +171,14 @@ const Home = () => {
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-cyan-400/30 rounded-full"
-            initial={{ 
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000), 
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
-              scale: Math.random() * 0.5 + 0.5
+            initial={{
+              x:
+                Math.random() *
+                (typeof window !== "undefined" ? window.innerWidth : 1000),
+              y:
+                Math.random() *
+                (typeof window !== "undefined" ? window.innerHeight : 1000),
+              scale: Math.random() * 0.5 + 0.5,
             }}
             animate={{
               y: [null, Math.random() * -100 - 50],
@@ -210,9 +217,7 @@ const Home = () => {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-white"
             >
               <span className="block">We Build</span>
-              <span className="text-cyan-400 block mt-2">
-                Future-Ready
-              </span>
+              <span className="text-cyan-400 block mt-2">Future-Ready</span>
               <span className="block mt-2">Digital Experiences</span>
             </motion.h1>
 
@@ -222,8 +227,9 @@ const Home = () => {
               transition={{ delay: 0.4 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto px-4"
             >
-              A premium full-stack development team crafting innovative web solutions
-              with cutting-edge technology and exceptional attention to detail.
+              A premium full-stack development team crafting innovative web
+              solutions with cutting-edge technology and exceptional attention
+              to detail.
             </motion.p>
 
             <motion.div
@@ -233,9 +239,9 @@ const Home = () => {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-6 sm:pt-8 px-4"
             >
               <motion.button
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(34, 211, 238, 0.3)"
+                  boxShadow: "0 20px 40px rgba(34, 211, 238, 0.3)",
                 }}
                 onClick={() => navigate("/contact")}
                 whileTap={{ scale: 0.95 }}
@@ -244,13 +250,13 @@ const Home = () => {
                 Hire Us
                 <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
               </motion.button>
-              
+
               <motion.button
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
-                  backgroundColor: "rgba(34, 211, 238, 0.1)"
+                  backgroundColor: "rgba(34, 211, 238, 0.1)",
                 }}
-                onClick={()=> navigate("/projects")}
+                onClick={() => navigate("/projects")}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 sm:px-10 sm:py-5 border-2 border-cyan-400 text-cyan-400 font-bold rounded-2xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 text-lg sm:text-xl w-full sm:w-auto justify-center"
               >
@@ -264,33 +270,44 @@ const Home = () => {
       {/* Stats Section */}
       <section className="py-12 sm:py-20 relative bg-slate-950">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-800/30 to-transparent" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-8 max-w-5xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto"
           >
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
                 variants={itemVariants}
-                className="text-center p-4 sm:p-8 bg-slate-800/50 rounded-xl sm:rounded-2xl border border-slate-700/50 backdrop-blur-sm group hover:border-cyan-400/30 transition-all duration-300"
+                className="text-center p-6 sm:p-8 bg-slate-800/50 rounded-xl sm:rounded-2xl border border-slate-700/50 backdrop-blur-sm group hover:border-cyan-400/30 transition-all duration-300"
               >
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-cyan-400/10 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-6 mx-auto group-hover:bg-cyan-400/20 transition-colors">
-                  <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-400" />
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0 sm:flex-col">
+                  {/* Icon on left for mobile, centered for desktop */}
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-cyan-400/10 rounded-xl flex items-center justify-center group-hover:bg-cyan-400/20 transition-colors">
+                    <stat.icon className="w-7 h-7 sm:w-8 sm:h-8 text-cyan-400" />
+                  </div>
+
+                  <div className="sm:mt-4">
+                    {/* Value - Large on mobile */}
+                    <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold text-cyan-400 mb-2">
+                      {stat.value}
+                    </h3>
+
+                    {/* Label and description in column for mobile */}
+                    <div className="flex flex-col">
+                      <p className="font-semibold text-white text-lg sm:text-xl mb-1">
+                        {stat.label}
+                      </p>
+                      <p className="text-gray-300 text-sm sm:text-base">
+                        {stat.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-3xl sm:text-5xl md:text-6xl font-bold text-cyan-400 mb-1 sm:mb-2">
-                  {stat.value}
-                </h3>
-                <p className="font-semibold text-white text-base sm:text-xl mb-1">
-                  {stat.label}
-                </p>
-                <p className="text-sm sm:text-lg text-gray-300">
-                  {stat.description}
-                </p>
               </motion.div>
             ))}
           </motion.div>
@@ -310,7 +327,8 @@ const Home = () => {
               Why Choose <span className="text-cyan-400">TechNova Studios</span>
             </h2>
             <p className="text-gray-300 text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto">
-              We combine technical expertise with creative innovation to deliver exceptional results
+              We combine technical expertise with creative innovation to deliver
+              exceptional results
             </p>
           </motion.div>
 
@@ -361,7 +379,8 @@ const Home = () => {
               Featured <span className="text-cyan-400">Projects</span>
             </h2>
             <p className="text-gray-300 text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto">
-              Explore our portfolio of successful projects that showcase our expertise
+              Explore our portfolio of successful projects that showcase our
+              expertise
             </p>
           </motion.div>
 
@@ -384,8 +403,8 @@ const Home = () => {
                   className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 backdrop-blur-sm rounded-xl sm:rounded-2xl overflow-hidden group cursor-pointer hover:border-cyan-400/30 h-full"
                 >
                   <div className="aspect-video bg-slate-700/50 flex items-center justify-center border-b border-slate-600/50">
-                    <img 
-                      src={project.image} 
+                    <img
+                      src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover opacity-50 group-hover:opacity-75 transition-opacity"
                     />
@@ -421,9 +440,9 @@ const Home = () => {
           >
             <Link to="/projects">
               <motion.button
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
-                  backgroundColor: "rgba(34, 211, 238, 0.1)"
+                  backgroundColor: "rgba(34, 211, 238, 0.1)",
                 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 sm:px-10 sm:py-5 border-2 border-cyan-400 text-cyan-400 font-bold rounded-2xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 flex items-center gap-2 mx-auto text-lg sm:text-xl"
@@ -440,7 +459,7 @@ const Home = () => {
       <section className="py-12 sm:py-20 relative overflow-hidden bg-slate-950">
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-cyan-400/10" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(34,211,238,0.15),transparent_70%)]" />
-        
+
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -449,18 +468,20 @@ const Home = () => {
             className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/30 rounded-xl sm:rounded-2xl p-8 sm:p-12 text-center backdrop-blur-sm"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-white">
-              Ready to Start Your <span className="text-cyan-400">Next Project?</span>
+              Ready to Start Your{" "}
+              <span className="text-cyan-400">Next Project?</span>
             </h2>
             <p className="text-gray-300 text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto mb-8 sm:mb-10">
-              Let&apos;s collaborate to bring your vision to life with cutting-edge technology and creative excellence
+              Let&apos;s collaborate to bring your vision to life with
+              cutting-edge technology and creative excellence
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               <Link to="/contact">
                 <motion.button
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(34, 211, 238, 0.3)"
+                    boxShadow: "0 20px 40px rgba(34, 211, 238, 0.3)",
                   }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 sm:px-10 sm:py-5 bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-bold rounded-2xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2 text-lg sm:text-xl w-full sm:w-auto justify-center"
@@ -469,14 +490,14 @@ const Home = () => {
                   <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
-              
-              <motion.a 
-                href="https://wa.me/9316846548" 
-                target="_blank" 
+
+              <motion.a
+                href="https://wa.me/9316846548"
+                target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
-                  backgroundColor: "rgba(34, 211, 238, 0.1)"
+                  backgroundColor: "rgba(34, 211, 238, 0.1)",
                 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 sm:px-10 sm:py-5 border-2 border-cyan-400 text-cyan-400 font-bold rounded-2xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 flex items-center gap-2 text-lg sm:text-xl w-full sm:w-auto justify-center"
